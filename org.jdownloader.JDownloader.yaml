@@ -6,7 +6,7 @@ runtime: org.freedesktop.Platform
 runtime-version: 1.6
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk9
+  - org.freedesktop.Sdk.Extension.openjdk10
 command: jd-wrapper
 finish-args:
   - --socket=x11
@@ -19,7 +19,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk9/install.sh
+      - /usr/lib/sdk/openjdk10/install.sh
 
   - name: jdownloader
     buildsystem: simple
