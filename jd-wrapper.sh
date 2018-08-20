@@ -8,7 +8,10 @@ if [ ! -f $JDDIR/JDownloader.jar ]; then
     $JDSETUP -q -dir $JDDIR/tmp | zenity --progress --text="Installing JDownloader" --pulsate --no-cancel --auto-close
     mv $JDDIR/tmp/JDownloader.jar $JDDIR
     rm -rf $JDSETUP $JDDIR/tmp
-    zenity --info --text "Download directory: $HOME/JDownloader" --no-wrap --title "JDownloader"
+fi
+
+if [ ! -z "$(ls -A $HOME/JDownloader)" ]; then
+   zenity --info --text "The directory $HOME/JDownloader will not be accessible in the future. Please move your files to $(xdg-user-dir DOWNLOAD)!" --no-wrap --title "JDownloader"
 fi
 
 java -jar $JDDIR/JDownloader.jar
