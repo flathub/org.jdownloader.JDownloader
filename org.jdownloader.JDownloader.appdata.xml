@@ -12,37 +12,13 @@
   <description><p>JDownloader is a free download management tool with a huge community of developers that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwidth limitations, auto-extract archives and much more. It's an easy-to-extend frameworkthat can save hours of your valuable time every day!</p></description>
   <description xml:lang="pt_BR"><p>JDownloader é uma ferramenta de gerenciamento de download gratuito com uma enorme comunidade de desenvolvedores que faz o download tão fácil e rápido quanto deveria ser. Os usuários podem iniciar, parar ou pausar downloads, definir limitações de largura de banda, extrair arquivos automaticamente e muito mais. É um framework fácil de estender que pode economizar horas do seu precioso tempo todos os dias!</p></description>
   <description xml:lang="es"><p>JDownloader es una herramienta gratuita de administración de descargas con una gran comunidad de desarrolladores que hace que la descarga sea tan fácil y rápida como debería ser. Los usuarios pueden iniciar, detener o pausar descargas, establecer limitaciones de ancho de banda, extraer automáticamente archivos y mucho más. ¡Es un marco fácil de ampliar que puede ahorrar horas de su valioso tiempo todos los días!</p></description>
-  <url type="homepage">http://jdownloader.org/</url>
-  <url type="homepage" xml:lang="pt_BR">http://jdownloader.org/pt/home/index?s=lng_pt</url>
-  <url type="homepage" xml:lang="es">http://jdownloader.org/es/home/index?s=lng_es</url>
+  <url type="homepage">http://www.jdownloader.org/</url>
+  <url type="homepage" xml:lang="pt_BR">http://www.jdownloader.org/pt/home/index?s=lng_pt</url>
+  <url type="homepage" xml:lang="es">http://www.jdownloader.org/es/home/index?s=lng_es</url>
   <screenshots>
     <screenshot type="default">
       <image>http://jdownloader.org/_media/screenshots/ss-2009.08.15-11.18.36.png</image>
     </screenshot>
   </screenshots>
-  <categories>
-    <category>Network</category>
-  </categories>
-  <content_rating type="oars-1.0">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="sex-themes">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">intense</content_attribute>
-    <content_attribute id="social-info">none</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
-    <content_attribute id="money-purchasing">none</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
-  </content_rating>
+  <content_rating type="oars-1.1" />
 </component>
