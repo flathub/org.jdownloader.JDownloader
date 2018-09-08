@@ -10,8 +10,4 @@ if [ ! -f $JDDIR/JDownloader.jar ]; then
     rm -rf $JDSETUP $JDDIR/tmp
 fi
 
-if [ ! -z "$(ls -A $HOME/JDownloader)" ]; then
-   zenity --info --text "The directory $HOME/JDownloader will not be accessible in the future. Please move your files to $(xdg-user-dir DOWNLOAD)!" --no-wrap --title "JDownloader"
-fi
-
 java -jar $JDDIR/JDownloader.jar

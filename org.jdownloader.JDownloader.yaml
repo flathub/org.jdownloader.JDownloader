@@ -12,7 +12,6 @@ finish-args:
   - --socket=x11
   - --share=ipc
   - --filesystem=xdg-download
-  - --filesystem=~/JDownloader:create # will be removed in the future
   - --share=network
   - --env=PATH=/usr/bin:/app/bin:/app/jre/bin
   - --env=JAVA_HOME=/app/jre
