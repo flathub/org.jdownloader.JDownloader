@@ -3,10 +3,10 @@ branch: stable
 tags:
   - proprietary
 runtime: org.freedesktop.Platform
-runtime-version: '1.6'
+runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk10
+  - org.freedesktop.Sdk.Extension.openjdk11
 command: jd-wrapper
 finish-args:
   - --socket=x11
@@ -19,7 +19,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk10/install.sh
+      - /usr/lib/sdk/openjdk11/install.sh
 
   - name: jdownloader
     buildsystem: simple
