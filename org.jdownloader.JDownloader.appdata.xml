@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>org.jdownloader.JDownloader</id>
-  <launchable type="desktop-id">org.jdownloader.JDownloader.desktop</launchable>
   <name>JDownloader</name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
