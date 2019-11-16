@@ -18,6 +18,15 @@ modules:
     buildsystem: simple
     build-commands: [/usr/lib/sdk/openjdk11/install.sh]
 
+  - name: unrar
+    no-autogen: true
+    make-install-args:
+      - DESTDIR=/app
+    sources:
+      - type: archive
+        url: https://www.rarlab.com/rar/unrarsrc-5.8.3.tar.gz
+        sha256: 3591685c8f5bbcb0be09de3d0a0544adb88966b9cccb80986f6cd2b534fd91a6
+
   - name: jdownloader
     buildsystem: simple
     build-commands:
