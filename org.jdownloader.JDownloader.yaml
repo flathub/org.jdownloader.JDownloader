@@ -27,6 +27,25 @@ modules:
         url: https://www.rarlab.com/rar/unrarsrc-5.8.3.tar.gz
         sha256: 3591685c8f5bbcb0be09de3d0a0544adb88966b9cccb80986f6cd2b534fd91a6
 
+  - name: ffmpeg
+    config-opts:
+      - --enable-rpath
+      - --enable-gpl
+      - --disable-static
+      - --enable-shared
+      - --disable-doc
+      - --disable-ffplay
+      - --disable-avdevice
+      - --disable-swresample
+      - --disable-swscale
+      - --disable-postproc
+    cleanup:
+      - /share/ffmpeg/examples
+    sources:
+      - type: archive
+        url: https://www.ffmpeg.org/releases/ffmpeg-4.2.1.tar.xz
+        sha256: cec7c87e9b60d174509e263ac4011b522385fd0775292e1670ecc1180c9bb6d4
+
   - name: jdownloader
     buildsystem: simple
     build-commands:
