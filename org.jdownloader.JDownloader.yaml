@@ -11,7 +11,7 @@ finish-args:
   - --share=ipc
   - --filesystem=xdg-download
   - --share=network
-  - --env=PATH=/usr/bin:/app/bin:/app/jre/bin
+  - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
 modules:
   - name: openjdk
