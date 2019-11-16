@@ -1,12 +1,10 @@
 app-id: org.jdownloader.JDownloader
-branch: stable
-tags:
-  - proprietary
+default-branch: stable
+tags: [proprietary]
 runtime: org.freedesktop.Platform
 runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk11
+sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk11]
 command: jd-wrapper
 finish-args:
   - --socket=x11
@@ -18,8 +16,7 @@ finish-args:
 modules:
   - name: openjdk
     buildsystem: simple
-    build-commands:
-      - /usr/lib/sdk/openjdk11/install.sh
+    build-commands: [/usr/lib/sdk/openjdk11/install.sh]
 
   - name: jdownloader
     buildsystem: simple
