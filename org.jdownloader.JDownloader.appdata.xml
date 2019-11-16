@@ -19,5 +19,8 @@
       <image>http://jdownloader.org/_media/screenshots/ss-2009.08.15-11.18.36.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.0" date="2011-01-01"/>
+  </releases>
 </component>
