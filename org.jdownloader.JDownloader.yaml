@@ -50,7 +50,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -D jd-wrapper.sh /app/bin/jd-wrapper
-      - install -Dm644 -t /app/share/metainfo org.jdownloader.JDownloader.appdata.xml
+      - install -Dm644 -t /app/share/metainfo org.jdownloader.JDownloader.metainfo.xml
       - install -Dm644 -t /app/share/applications org.jdownloader.JDownloader.desktop
       - install -Dm644 -t /app/share/icons/hicolor/512x512/apps org.jdownloader.JDownloader.png
     sources:
@@ -61,7 +61,7 @@ modules:
       - type: file
         path: org.jdownloader.JDownloader.png
       - type: file
-        path: org.jdownloader.JDownloader.appdata.xml
+        path: org.jdownloader.JDownloader.metainfo.xml
       - type: extra-data
         filename: JD2Setup.sh
         url: http://installer.jdownloader.org/JD2Setup_x64.sh
