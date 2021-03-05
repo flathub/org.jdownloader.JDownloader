@@ -2,5 +2,5 @@
 Type=Application
 Name=JDownloader
 Icon=org.jdownloader.JDownloader
-Exec=jd-wrapper
+Exec=jd-wrapper -- %u
 Categories=Network;
