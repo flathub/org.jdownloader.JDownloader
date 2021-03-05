@@ -10,4 +10,4 @@ if [ ! -f ${JDDIR}/JDownloader.jar ]; then
     rm -rf ${JDSETUP} ${JDDIR}/tmp
 fi
 
-exec java -jar ${JDDIR}/JDownloader.jar
+exec java -jar ${JDDIR}/JDownloader.jar "${@}"
