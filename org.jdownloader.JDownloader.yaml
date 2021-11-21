@@ -2,7 +2,7 @@ app-id: org.jdownloader.JDownloader
 default-branch: stable
 tags: [proprietary]
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk11]
 command: jd-wrapper
@@ -24,8 +24,8 @@ modules:
       - DESTDIR=/app
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-5.9.4.tar.gz
-        sha256: 3d010d14223e0c7a385ed740e8f046edcbe885e5c22c5ad5733d009596865300
+        url: https://www.rarlab.com/rar/unrarsrc-6.1.2.tar.gz
+        sha256: 3e96421f568e438af6dcdaef717c48eb93b825d97058ebcb173b9bfc57807be3
 
   - name: ffmpeg
     config-opts:
@@ -43,8 +43,8 @@ modules:
       - /share/ffmpeg/examples
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-4.3.1.tar.xz
-        sha256: ad009240d46e307b4e03a213a0f49c11b650e445b1f8be0dda2a9212b34d2ffb
+        url: https://www.ffmpeg.org/releases/ffmpeg-4.4.1.tar.xz
+        sha256: eadbad9e9ab30b25f5520fbfde99fae4a92a1ae3c0257a8d68569a4651e30e02
 
   - name: jdownloader
     buildsystem: simple
