@@ -2,7 +2,7 @@ app-id: org.jdownloader.JDownloader
 default-branch: stable
 tags: [proprietary]
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk17]
 command: jd-wrapper
