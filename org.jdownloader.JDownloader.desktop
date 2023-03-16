@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=JDownloader
-Comment=JDownloader is a free, open-source download management tool
+Comment=JDownloader is a free download management tool
 Icon=org.jdownloader.JDownloader
 Exec=jd-wrapper -- %u
 Categories=Network;
