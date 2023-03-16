@@ -2,30 +2,23 @@ app-id: org.jdownloader.JDownloader
 default-branch: stable
 tags: [proprietary]
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk11]
+sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk17]
 command: jd-wrapper
 finish-args:
   - --socket=x11
   - --share=ipc
   - --filesystem=xdg-download
+  - --filesystem=/run/media
+  - --filesystem=/media
   - --share=network
   - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
 modules:
   - name: openjdk
     buildsystem: simple
-    build-commands: [/usr/lib/sdk/openjdk11/install.sh]
-
-  - name: unrar
-    no-autogen: true
-    make-install-args:
-      - DESTDIR=/app
-    sources:
-      - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-5.9.4.tar.gz
-        sha256: 3d010d14223e0c7a385ed740e8f046edcbe885e5c22c5ad5733d009596865300
+    build-commands: [/usr/lib/sdk/openjdk17/install.sh]
 
   - name: ffmpeg
     config-opts:
@@ -43,8 +36,8 @@ modules:
       - /share/ffmpeg/examples
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-4.3.1.tar.xz
-        sha256: ad009240d46e307b4e03a213a0f49c11b650e445b1f8be0dda2a9212b34d2ffb
+        url: https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.xz
+        sha256: af419a7f88adbc56c758ab19b4c708afbcae15ef09606b82b855291f6a6faa93
 
   - name: jdownloader
     buildsystem: simple
