@@ -1,11 +1,12 @@
 app-id: org.jdownloader.JDownloader
 default-branch: stable
-tags: [proprietary]
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
-sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk17]
 command: jd-wrapper
+tags:
+  - proprietary
+
 finish-args:
   - --socket=x11
   - --share=ipc
@@ -15,10 +16,15 @@ finish-args:
   - --share=network
   - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
+
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk17
+
 modules:
   - name: openjdk
     buildsystem: simple
-    build-commands: [/usr/lib/sdk/openjdk17/install.sh]
+    build-commands:
+      - /usr/lib/sdk/openjdk17/install.sh
 
   - name: ffmpeg
     config-opts:
