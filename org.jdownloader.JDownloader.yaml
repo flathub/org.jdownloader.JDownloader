@@ -1,7 +1,7 @@
 app-id: org.jdownloader.JDownloader
 default-branch: stable
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: &runtime-version "23.08"
 x-openh264-version: &openh264-version "2.3.1"
 sdk: org.freedesktop.Sdk
 command: jd-wrapper
@@ -23,84 +23,31 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 
 add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: lib/ffmpeg
+    add-ld-path: .
+    version: *runtime-version
+    autodelete: false
+
   org.freedesktop.Platform.openh264:
     directory: lib/openh264
     add-ld-path: .
     version: *openh264-version
     autodelete: false
 
-cleanup-commands:
-  - mkdir -p /app/lib/openh264
-
 modules:
-  - name: openjdk
+  - name: bootstrap
     buildsystem: simple
     build-commands:
+      - set -e
+      - mkdir -p /app/lib/ffmpeg
+      - mkdir -p /app/lib/openh264
       - /usr/lib/sdk/openjdk17/install.sh
-
-  # TODO: Switch to ffmpeg-full extension once platform 23.08 is available as missing (de)muxers are now included in standard
-  # Configuration based on freedesktop-sdk-22.08.12.1 ffmpeg and ffmpeg-full with some simplifications from 23.08beta
-  - name: ffmpeg
-    buildsystem: autotools
-    build-options:
-      prefix: /app/lib/ffmpeg
-      libdir: /app/lib/ffmpeg
-      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches
-      ldflags: -Wl,-z,relro,-z,now -Wl,--as-needed
-      arch:
-        x86_64:
-          cflags: -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer
-        aarch64:
-          cflags: -fasynchronous-unwind-tables -fstack-clash-protection -fno-omit-frame-pointer
-    config-opts:
-      - --disable-stripping
-      - --disable-doc
-      - --disable-static
-      - --enable-shared
-      - --disable-programs
-      - --enable-gnutls
-      - --enable-libaom
-      - --enable-libdav1d
-      - --enable-libfdk-aac
-      - --enable-libmp3lame
-      - --enable-libfontconfig
-      - --enable-libfreetype
-      - --enable-libopus
-      - --enable-libpulse
-      - --enable-libspeex
-      - --enable-libtheora
-      - --enable-libvorbis
-      - --enable-libvpx
-      - --enable-libwebp
-      - --enable-openal
-      - --enable-opengl
-      - --enable-sdl2
-      - --enable-vulkan
-      - --enable-zlib
-      - --enable-libv4l2
-      - --enable-libxcb
-      - --enable-vdpau
-      - --enable-vaapi
-      - --enable-pthreads
-      - --enable-encoders
-      - --enable-encoders
-      - --enable-libopenh264
-    cleanup:
-      - /lib/ffmpeg/include
-      - /lib/ffmpeg/pkgconfig
-      - /lib/ffmpeg/share
-    sources:
-      - type: git
-        url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n5.0.3
-        commit: 0e15444aceca0e78f99f3d67758eb79d11b86599
-        x-checker-data:
-          type: git
-          tag-pattern: ^n((?:\d+\.){1,2}\d+)$
 
   - name: jdownloader
     buildsystem: simple
     build-commands:
+      - set -e
       - install -D jd-wrapper.sh /app/bin/jd-wrapper
       - install -Dm644 -t /app/share/metainfo org.jdownloader.JDownloader.metainfo.xml
       - install -Dm644 -t /app/share/applications org.jdownloader.JDownloader.desktop
