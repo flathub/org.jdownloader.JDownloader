@@ -1,8 +1,8 @@
 app-id: org.jdownloader.JDownloader
 default-branch: stable
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
-x-openh264-version: &openh264-version "2.3.1"
+runtime-version: '22.08'
+x-openh264-version: &openh264-version 2.3.1
 sdk: org.freedesktop.Sdk
 command: jd-wrapper
 tags:
@@ -45,11 +45,13 @@ modules:
     build-options:
       prefix: /app/lib/ffmpeg
       libdir: /app/lib/ffmpeg
-      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions
+        -fstack-protector-strong -grecord-gcc-switches
       ldflags: -Wl,-z,relro,-z,now -Wl,--as-needed
       arch:
         x86_64:
-          cflags: -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer
+          cflags: -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection
+            -fno-omit-frame-pointer
         aarch64:
           cflags: -fasynchronous-unwind-tables -fstack-clash-protection -fno-omit-frame-pointer
     config-opts:
@@ -92,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://git.ffmpeg.org/ffmpeg.git
-        tag: n5.0.3
-        commit: 0e15444aceca0e78f99f3d67758eb79d11b86599
+        tag: n6.1
+        commit: d4ff0020b40b524a490cf62eccbd3a318f4c0e58
         x-checker-data:
           type: git
           tag-pattern: ^n((?:\d+\.){1,2}\d+)$
