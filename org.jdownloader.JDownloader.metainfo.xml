@@ -4,23 +4,40 @@
   <name>JDownloader</name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
-  <developer_name>Appwork GmbH</developer_name>
+  <developer id="com.wemakeyourappwork">
+    <name>Appwork GmbH</name>
+  </developer>
   <summary>Download management tool</summary>
   <summary xml:lang="pt_BR">Ferramenta de gerenciamento de download</summary>
   <summary xml:lang="es">Descargar herramienta de gestión</summary>
-  <description><p>JDownloader is a free download management tool with a huge community of developers that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwidth limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!</p></description>
-  <description xml:lang="pt_BR"><p>JDownloader é uma ferramenta de gerenciamento de download gratuito com uma enorme comunidade de desenvolvedores que faz o download tão fácil e rápido quanto deveria ser. Os usuários podem iniciar, parar ou pausar downloads, definir limitações de largura de banda, extrair arquivos automaticamente e muito mais. É um framework fácil de estender que pode economizar horas do seu precioso tempo todos os dias!</p></description>
-  <description xml:lang="es"><p>JDownloader es una herramienta gratuita de administración de descargas con una gran comunidad de desarrolladores que hace que la descarga sea tan fácil y rápida como debería ser. Los usuarios pueden iniciar, detener o pausar descargas, establecer limitaciones de ancho de banda, extraer automáticamente archivos y mucho más. ¡Es un marco fácil de ampliar que puede ahorrar horas de su valioso tiempo todos los días!</p></description>
+  <description>
+    <p>JDownloader is a free download management tool with a huge community of developers that makes
+      downloading as easy and fast as it should be. Users can start, stop or pause downloads, set
+      bandwidth limitations, auto-extract archives and much more. It's an easy-to-extend framework
+      that can save hours of your valuable time every day!</p>
+    <p xml:lang="es">JDownloader es una herramienta gratuita de administración de descargas con una
+      gran comunidad
+      de desarrolladores que hace que la descarga sea tan fácil y rápida como debería ser. Los
+      usuarios pueden iniciar, detener o pausar descargas, establecer limitaciones de ancho de
+      banda, extraer automáticamente archivos y mucho más. ¡Es un marco fácil de ampliar que puede
+      ahorrar horas de su valioso tiempo todos los días!</p>
+    <p xml:lang="pt_BR">JDownloader é uma ferramenta de gerenciamento de download gratuito com uma
+      enorme comunidade
+      de desenvolvedores que faz o download tão fácil e rápido quanto deveria ser. Os usuários podem
+      iniciar, parar ou pausar downloads, definir limitações de largura de banda, extrair arquivos
+      automaticamente e muito mais. É um framework fácil de estender que pode economizar horas do
+      seu precioso tempo todos os dias!</p>
+  </description>
   <url type="homepage">http://www.jdownloader.org/</url>
-  <url type="homepage" xml:lang="pt_BR">http://www.jdownloader.org/pt/home/index?s=lng_pt</url>
-  <url type="homepage" xml:lang="es">http://www.jdownloader.org/es/home/index?s=lng_es</url>
   <screenshots>
     <screenshot type="default">
-      <image>http://jdownloader.org/_media/screenshots/ss-2009.08.15-11.18.36.png</image>
+      <image>https://upload.wikimedia.org/wikipedia/commons/5/58/Jdownloader_0.8.png</image>
+      <caption>JDownloader main window</caption>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1"/>
+  <content_rating type="oars-1.1" />
   <releases>
-    <release version="2.0" date="2011-01-01"/>
+    <release version="2.0" date="2011-01-01" />
   </releases>
+  <launchable type="desktop-id">org.jdownloader.JDownloader.desktop</launchable>
 </component>
