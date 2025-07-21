@@ -26,7 +26,11 @@
       extrair arquivos automaticamente e muito mais. É um framework fácil de estender que pode
       economizar horas do seu precioso tempo todos os dias!</p>
   </description>
-  <url type="homepage">https://www.jdownloader.org/</url>
+  <url type="homepage">https://jdownloader.org/</url>
+  <url type="contact">https://jdownloader.org/impressum/</url>
+  <url type="faq">https://support.jdownloader.org/knowledgebase/</url>
+  <url type="contribute">https://support.jdownloader.org/en/knowledgebase/article/setup-ide-eclipse</url>
+  <url type="donation">https://my.jdownloader.org/contribute/</url>
   <screenshots>
     <screenshot type="default">
       <image>https://upload.wikimedia.org/wikipedia/commons/5/58/Jdownloader_0.8.png</image>
