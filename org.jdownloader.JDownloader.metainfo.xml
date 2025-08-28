@@ -27,8 +27,8 @@
       economizar horas do seu precioso tempo todos os dias!</p>
   </description>
   <url type="homepage">https://jdownloader.org/</url>
-  <url type="contact">https://jdownloader.org/impressum/</url>
-  <url type="faq">https://support.jdownloader.org/knowledgebase/</url>
+  <url type="contact">https://jdownloader.org/impressum</url>
+  <url type="faq">https://support.jdownloader.org/knowledgebase</url>
   <url type="contribute">https://support.jdownloader.org/en/knowledgebase/article/setup-ide-eclipse</url>
   <url type="donation">https://my.jdownloader.org/contribute/</url>
   <screenshots>
