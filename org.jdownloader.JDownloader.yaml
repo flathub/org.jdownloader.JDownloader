@@ -1,8 +1,7 @@
 app-id: org.jdownloader.JDownloader
 default-branch: stable
 runtime: org.freedesktop.Platform
-runtime-version: &runtime-version "24.08"
-x-openh264-version: &openh264-version "2.4.1"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: jd-wrapper
 tags:
@@ -16,23 +15,15 @@ finish-args:
   - --filesystem=/media
   - --share=network
   - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
-  - --env=LD_LIBRARY_PATH=/app/lib/ffmpeg:/app/lib/openh264/extra
   - --env=JAVA_HOME=/app/jre
 
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk
 
 add-extensions:
-  org.freedesktop.Platform.ffmpeg-full:
-    directory: lib/ffmpeg
-    add-ld-path: .
-    version: *runtime-version
-    autodelete: false
-
-  org.freedesktop.Platform.openh264:
-    directory: lib/openh264
-    add-ld-path: .
-    version: *openh264-version
+  org.freedesktop.Platform.codecs_extra:
+    directory: lib/codecs-extra
+    add-ld-path: lib
     autodelete: false
 
 modules:
@@ -40,8 +31,7 @@ modules:
     buildsystem: simple
     build-commands:
       - set -e
-      - mkdir -p /app/lib/ffmpeg
-      - mkdir -p /app/lib/openh264
+      - mkdir -p /app/lib/codecs-extra
       - /usr/lib/sdk/openjdk/install.sh
 
   - name: jdownloader
