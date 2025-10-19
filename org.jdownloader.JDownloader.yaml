@@ -14,7 +14,7 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/media
   - --share=network
-  - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
+  - --env=PATH=/app/jre/bin:/app/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
 
 sdk-extensions:
@@ -27,6 +27,11 @@ add-extensions:
     autodelete: false
 
 modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk/install.sh
+
   - name: bootstrap
     buildsystem: simple
     build-commands:
