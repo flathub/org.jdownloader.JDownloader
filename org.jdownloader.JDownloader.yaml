@@ -60,7 +60,7 @@ modules:
       - type: file
         path: org.jdownloader.JDownloader.metainfo.xml
       - type: extra-data
-        filename: JD2Setup.sh
-        url: https://installer.jdownloader.org/JD2Setup_x64.sh
-        sha256: ddd1a997afaf60c981fbfb1a1f3a600ff7bad7fccece9f2508fb695b8c2f153d
-        size: 50621986
+        filename: JDownloader.jar
+        url: https://installer.jdownloader.org/flatpak/2025-11-04/JDownloader.jar
+        sha256: 388a1d028e65cbc63933a778ddbc9267c14e7e7858389ce31a10be7308adeb40
+        size: 5189769
