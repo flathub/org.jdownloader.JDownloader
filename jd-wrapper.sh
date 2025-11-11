@@ -3,8 +3,7 @@
 JDDIR=${XDG_DATA_HOME}/jdownloader
 
 if ! jar -tvf ${JDDIR}/JDownloader.jar > /dev/null 2>&1; then
-    rm -f ${JDDIR}/Core.jar
-    rm -rf ${JDDIR}/update ${JDDIR}/tmp
+    rm -rf ${JDDIR}/JDownloader.jar ${JDDIR}/Core.jar ${JDDIR}/update ${JDDIR}/tmp 2>/dev/null
     mkdir -p ${JDDIR}
     cp /app/extra/JDownloader.jar ${JDDIR}/
 fi
