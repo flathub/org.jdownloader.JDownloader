@@ -20,12 +20,6 @@ finish-args:
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk
 
-add-extensions:
-  org.freedesktop.Platform.codecs_extra:
-    directory: lib/codecs-extra
-    add-ld-path: lib
-    autodelete: false
-
 modules:
   - name: openjdk
     buildsystem: simple
@@ -34,13 +28,6 @@ modules:
       # Copy the 'jar' executable to the JRE bin directory
       - source /usr/lib/sdk/openjdk/enable.sh &&
         cp -ra $JAVA_HOME/bin/jar /app/jre/bin
-
-  - name: bootstrap
-    buildsystem: simple
-    build-commands:
-      - set -e
-      - mkdir -p /app/lib/codecs-extra
-      - /usr/lib/sdk/openjdk/install.sh
 
   - name: jdownloader
     buildsystem: simple
