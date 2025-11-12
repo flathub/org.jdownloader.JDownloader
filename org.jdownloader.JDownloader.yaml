@@ -31,6 +31,9 @@ modules:
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk/install.sh
+      # Copy the 'jar' executable to the JRE bin directory
+      - source /usr/lib/sdk/openjdk/enable.sh &&
+        cp -ra $JAVA_HOME/bin/jar /app/jre/bin
 
   - name: bootstrap
     buildsystem: simple
