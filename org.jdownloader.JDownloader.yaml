@@ -13,6 +13,7 @@ finish-args:
   - --filesystem=xdg-download
   - --filesystem=/run/media
   - --filesystem=/media
+  - --filesystem=/etc/os-release:ro
   - --share=network
   - --env=PATH=/app/jre/bin:/app/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
