@@ -4,8 +4,6 @@ runtime: org.freedesktop.Platform
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: jd-wrapper
-tags:
-  - proprietary
 
 finish-args:
   - --socket=x11
@@ -29,6 +27,38 @@ modules:
       - source /usr/lib/sdk/openjdk/enable.sh &&
         cp -ra $JAVA_HOME/bin/jar /app/jre/bin
 
+  - name: jdownloader-build
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/openjdk/bin:/usr/lib/sdk/openjdk/ant/bin
+      env:
+        JAVA_HOME: /usr/lib/sdk/openjdk/jvm/openjdk
+        ANT_HOME: /usr/lib/sdk/openjdk/ant
+    sources:
+      - type: svn
+        url: svn://svn.appwork.org/utils
+        revision: "4410"
+        dest: AppWorkUtils
+      - type: svn
+        url: svn://svn.jdownloader.org/jdownloader/browser
+        revision: "50639"
+        dest: JDBrowser
+      - type: svn
+        url: svn://svn.jdownloader.org/jdownloader/trunk
+        revision: "50639"
+        dest: JDownloader
+      - type: svn
+        url: svn://svn.jdownloader.org/jdownloader/MyJDownloaderClient
+        revision: "50639"
+        dest: MyJDownloaderClient
+    build-commands:
+      - source /usr/lib/sdk/openjdk/enable.sh &&
+        cd JDownloader &&
+        cp build/newBuild/build_standalone.xml build.xml &&
+        ant standalone
+      - install -d /app/lib/jdownloader
+      - cp -r JDownloader/standalone/dist/* /app/lib/jdownloader/
+
   - name: jdownloader
     buildsystem: simple
     build-commands:
@@ -49,8 +79,3 @@ modules:
         path: org.jdownloader.JDownloader.png
       - type: file
         path: org.jdownloader.JDownloader.metainfo.xml
-      - type: extra-data
-        filename: JDownloader.jar
-        url: https://installer.jdownloader.org/flatpak/2025-11-04/JDownloader.jar
-        sha256: 388a1d028e65cbc63933a778ddbc9267c14e7e7858389ce31a10be7308adeb40
-        size: 5189769
